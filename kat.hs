@@ -1,6 +1,5 @@
 --Owned By Vushu
 
-import Data.String
 import BookReader
 main :: IO ()
 main = do
@@ -9,7 +8,7 @@ main = do
 	putStrLn $ "*****************************************************************\r\n"
 	putStrLn $ "Have fun with Kat :D, Choose a number.\r\n"
 	menu
-
+menu :: IO ()
 menu = do
 	putStrLn $ "\r-----Main Menu----- \r\n"
 	putStrLn $ "1. Play Quiz "
@@ -20,7 +19,7 @@ menu = do
 	putStrLn $ "\r------------------- \r\n"
 	a <- getLine
 	doActivity a
-
+doActivity :: [Char] -> IO ()
 doActivity "1" = quizMenu
 doActivity "2" = goShopping
 doActivity "3" = cookingTime
@@ -30,6 +29,7 @@ doActivity x = do
 	putStrLn $ "Nope not valid Bitch do again!"
 	menu
 
+info :: IO ()
 info = do
 	putStrLn $ "\nKats Fun House v.1.0\r\n"
 
@@ -38,7 +38,7 @@ info = do
 	putStrLn $ "\nEnter to Continue Kats Fun House"
 	a <- getLine
 	menu
-
+quizMenu :: IO ()
 quizMenu = do
 	putStrLn $ "Quiz Time With Kat are you Ready?, Then Choose a Quiz \r\n"
 
@@ -47,7 +47,7 @@ quizMenu = do
 	putStrLn $ "2. Random Kat Quiz"
 	a <-getLine
 	playQuiz a
-
+playQuiz :: String -> IO ()
 playQuiz "0" = menu
 playQuiz "1" = quizOne
 playQuiz "2" = quizTwo
@@ -55,36 +55,34 @@ playQuiz x = do
 	putStrLn $ "Not valied try again"
 	quizMenu
 
-playQuiz x = do
-	putStrLn $ "Nope invalid"
-	quizMenu
-
-	putStrLn $ "yo"
+quizOne :: IO ()
 quizOne = do
-
 	putStrLn $ "Anatomi Quiz"
 	a <-getLine
 
 	putStrLn $ "yo"
 
-
+quizTwo :: IO ()
 quizTwo = do
 	putStrLn $ "Random Kat Quiz"
 
 	a <-getLine
 
 	putStrLn $ "yo"
+goShopping :: IO ()
 goShopping = do
 	print "Shopping!"
 	a <-getLine
 	putStrLn $ "yo"
 
+cookingTime :: IO ()
 cookingTime = do
 	putStrLn $ "Cooking Time!"
 
 	a <-getLine
 	putStrLn $ "yo"
 
+storyTelling :: IO ()
 storyTelling = do
 	putStrLn $ "Story telling Time!\r\n"
 	putStrLn $ "0. Back to Menu"
