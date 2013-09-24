@@ -1,3 +1,5 @@
+--Owned By Vushu
+
 import Data.String
 import BookReader
 main :: IO ()
